@@ -2,8 +2,7 @@ package com.tale;
 
 import com.blade.Blade;
 import com.blade.security.web.csrf.CsrfMiddleware;
-import com.blade.validator.ValidatorMiddleware;
-import com.tale.init.TaleLoader;
+import com.tale.bootstrap.TaleLoader;
 
 /**
  * Tale启动类
@@ -12,10 +11,10 @@ import com.tale.init.TaleLoader;
  */
 public class Application {
 
-    public static void main(String[] args) throws Exception {
-        Blade blade = Blade.me();
+    public static void main(String[] args) {
+        Blade blade = Blade.of();
         TaleLoader.init(blade);
-        blade.use(new ValidatorMiddleware(), new CsrfMiddleware()).start(Application.class, args);
+        blade.use(new CsrfMiddleware()).start(Application.class, args);
     }
 
 }

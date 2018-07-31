@@ -1,0 +1,12 @@
+INSERT INTO tale.t_logs (id, action, data, author_id, ip, created) VALUES (1, '初始化站点', null, 1, '', 1515465154);
+INSERT INTO tale.t_logs (id, action, data, author_id, ip, created) VALUES (2, '初始化站点', null, 3, '', 1515467073);
+INSERT INTO tale.t_logs (id, action, data, author_id, ip, created) VALUES (3, '登录后台', 'ganx', 3, '127.0.0.1', 1515467083);
+INSERT INTO tale.t_logs (id, action, data, author_id, ip, created) VALUES (4, '登录后台', 'ganx', 3, '127.0.0.1', 1515548774);
+INSERT INTO tale.t_logs (id, action, data, author_id, ip, created) VALUES (5, '登录后台', 'ganx', 3, '112.10.94.60', 1516022018);
+INSERT INTO tale.t_logs (id, action, data, author_id, ip, created) VALUES (6, '登录后台', 'ganx', 3, '115.236.91.15', 1516084550);
+INSERT INTO tale.t_logs (id, action, data, author_id, ip, created) VALUES (7, '登录后台', 'ganx', 3, '127.0.0.1', 1519568469);
+INSERT INTO tale.t_logs (id, action, data, author_id, ip, created) VALUES (8, '登录后台', 'ganx', 3, '127.0.0.1', 1519570907);
+INSERT INTO tale.t_logs (id, action, data, author_id, ip, created) VALUES (9, '修改密码', null, 3, '127.0.0.1', 1519609172);
+INSERT INTO tale.t_logs (id, action, data, author_id, ip, created) VALUES (10, '删除文章', '24', 3, '127.0.0.1', 1519654661);
+INSERT INTO tale.t_logs (id, action, data, author_id, ip, created) VALUES (11, '删除附件', '/upload/2018/01/5l15e1nj8chqoqhcd9ibsr1vrf.jpg', 3, '127.0.0.1', 1520261306);
+INSERT INTO tale.t_logs (id, action, data, author_id, ip, created) VALUES (12, '登录后台', 'ganx', 3, '127.0.0.1', 1523529919);

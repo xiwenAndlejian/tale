@@ -3,10 +3,14 @@ package com.tale.service;
 import com.blade.ioc.annotation.Bean;
 import com.blade.kit.StringKit;
 import com.tale.model.entity.Options;
+import io.github.biezhi.anima.core.AnimaQuery;
 
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
+import static io.github.biezhi.anima.Anima.delete;
+import static io.github.biezhi.anima.Anima.select;
 
 /**
  * 配置Service
@@ -16,17 +20,6 @@ import java.util.Map;
  */
 @Bean
 public class OptionsService {
-
-    /**
-     * 保存一组配置
-     *
-     * @param options 配置字典表
-     */
-    public void saveOptions(Map<String, List<String>> options) {
-        if (null != options && !options.isEmpty()) {
-            options.forEach((k, v) -> saveOption(k, v.get(0)));
-        }
-    }
 
     /**
      * 保存配置
@@ -39,7 +32,8 @@ public class OptionsService {
             Options options = new Options();
             options.setName(key);
 
-            long count = options.count();
+            long count = select().from(Options.class).where(Options::getName, key).count();
+
             if (count == 0) {
                 options = new Options();
                 options.setName(key);
@@ -48,7 +42,7 @@ public class OptionsService {
             } else {
                 options = new Options();
                 options.setValue(value);
-                options.update(key);
+                options.updateById(key);
             }
         }
     }
@@ -57,22 +51,9 @@ public class OptionsService {
      * 获取系统配置
      */
     public Map<String, String> getOptions() {
-        return getOptions(null);
-    }
-
-    /**
-     * 根据key前缀查找配置项
-     *
-     * @param key 配置key
-     */
-    public Map<String, String> getOptions(String key) {
         Map<String, String> options = new HashMap<>();
-
-        Options activeRecord = new Options();
-        if (StringKit.isNotBlank(key)) {
-            activeRecord.like("name", key + "%");
-        }
-        List<Options> optionsList = activeRecord.findAll();
+        AnimaQuery<Options> animaQuery = select().from(Options.class);
+        List<Options> optionsList = animaQuery.all();
         if (null != optionsList) {
             optionsList.forEach(option -> options.put(option.getName(), option.getValue()));
         }
@@ -80,7 +61,7 @@ public class OptionsService {
     }
 
     public String getOption(String key) {
-        Options options = new Options().where("name", key).find();
+        Options options = select().from(Options.class).byId(key);
         if (null != options) {
             return options.getValue();
         }
@@ -94,7 +75,7 @@ public class OptionsService {
      */
     public void deleteOption(String key) {
         if (StringKit.isNotBlank(key)) {
-            new Options().like("name", key + "%").delete();
+            delete().from(Options.class).where(Options::getName).like(key + "%").execute();
         }
     }
 }

@@ -1,19 +1,18 @@
 package com.tale.controller;
 
 import com.blade.ioc.annotation.Inject;
-import com.blade.jdbc.page.Page;
 import com.blade.mvc.annotation.GetRoute;
 import com.blade.mvc.annotation.Param;
 import com.blade.mvc.annotation.Path;
 import com.blade.mvc.annotation.PathParam;
 import com.blade.mvc.http.Request;
-import com.tale.init.TaleConst;
+import com.tale.bootstrap.TaleConst;
 import com.tale.model.dto.Types;
 import com.tale.model.entity.Contents;
 import com.tale.model.entity.Metas;
 import com.tale.service.ContentsService;
 import com.tale.service.MetasService;
-import lombok.extern.slf4j.Slf4j;
+import io.github.biezhi.anima.page.Page;
 
 import java.util.List;
 import java.util.Map;
@@ -25,7 +24,6 @@ import java.util.Set;
  * @author biezhi
  * @date 2017/9/17
  */
-@Slf4j
 @Path
 public class CategoryController extends BaseController {
 
@@ -63,6 +61,7 @@ public class CategoryController extends BaseController {
     @GetRoute(value = {"category/:keyword/:page", "category/:keyword/:page.html"})
     public String categories(Request request, @PathParam String keyword,
                              @PathParam int page, @Param(defaultValue = "12") int limit) {
+
         page = page < 0 || page > TaleConst.MAX_PAGE ? 1 : page;
         Metas metaDto = metasService.getMeta(Types.CATEGORY, keyword);
         if (null == metaDto) {

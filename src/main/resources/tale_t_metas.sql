@@ -1,0 +1,17 @@
+INSERT INTO tale.t_metas (mid, name, slug, type, description, sort, parent) VALUES (1, '默认分类', null, 'category', null, 0, 0);
+INSERT INTO tale.t_metas (mid, name, slug, type, description, sort, parent) VALUES (2, 'tale', null, 'category', null, 0, 0);
+INSERT INTO tale.t_metas (mid, name, slug, type, description, sort, parent) VALUES (3, 'linux', null, 'category', null, 0, 0);
+INSERT INTO tale.t_metas (mid, name, slug, type, description, sort, parent) VALUES (4, '算法', null, 'category', null, 0, 0);
+INSERT INTO tale.t_metas (mid, name, slug, type, description, sort, parent) VALUES (5, '算法', '算法', 'tag', null, 0, 0);
+INSERT INTO tale.t_metas (mid, name, slug, type, description, sort, parent) VALUES (6, '字符串', '字符串', 'tag', null, 0, 0);
+INSERT INTO tale.t_metas (mid, name, slug, type, description, sort, parent) VALUES (7, '落单的数', '落单的数', 'tag', null, 0, 0);
+INSERT INTO tale.t_metas (mid, name, slug, type, description, sort, parent) VALUES (8, '位运算', '位运算', 'tag', null, 0, 0);
+INSERT INTO tale.t_metas (mid, name, slug, type, description, sort, parent) VALUES (9, '排序', '排序', 'tag', null, 0, 0);
+INSERT INTO tale.t_metas (mid, name, slug, type, description, sort, parent) VALUES (10, '归并排序', '归并排序', 'tag', null, 0, 0);
+INSERT INTO tale.t_metas (mid, name, slug, type, description, sort, parent) VALUES (11, '数组', '数组', 'tag', null, 0, 0);
+INSERT INTO tale.t_metas (mid, name, slug, type, description, sort, parent) VALUES (12, '排序数组', '排序数组', 'tag', null, 0, 0);
+INSERT INTO tale.t_metas (mid, name, slug, type, description, sort, parent) VALUES (13, 'springboot', null, 'category', null, 0, 0);
+INSERT INTO tale.t_metas (mid, name, slug, type, description, sort, parent) VALUES (14, 'mongodb', null, 'category', null, 0, 0);
+INSERT INTO tale.t_metas (mid, name, slug, type, description, sort, parent) VALUES (15, 'springboot', 'springboot', 'tag', null, 0, 0);
+INSERT INTO tale.t_metas (mid, name, slug, type, description, sort, parent) VALUES (16, 'mongodb', 'mongodb', 'tag', null, 0, 0);
+INSERT INTO tale.t_metas (mid, name, slug, type, description, sort, parent) VALUES (17, '拦截器', '拦截器', 'tag', null, 0, 0);

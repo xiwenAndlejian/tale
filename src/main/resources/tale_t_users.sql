@@ -1,0 +1,2 @@
+INSERT INTO tale.t_users (uid, username, password, email, home_url, screen_name, created, activated, logged, group_name) VALUES (3, 'ganx', 'df784d40bfe50ec06801908787db0bfc', null, null, 'ganx', 1515467073, null, 1523529919, null);
+INSERT INTO tale.t_users (uid, username, password, email, home_url, screen_name, created, activated, logged, group_name) VALUES (4, 'luoyu', '0a899da7671fc07ffbc5adc709448451', 'luoyukami@qq.com', null, 'luoyu', 1515477502, null, null, null);

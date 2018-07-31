@@ -2,6 +2,7 @@ package com.tale.model.dto;
 
 import com.tale.model.entity.Comments;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.ToString;
 
 import java.util.List;
@@ -11,6 +12,7 @@ import java.util.List;
  */
 @Data
 @ToString(callSuper = true)
+@EqualsAndHashCode(callSuper = true)
 public class Comment extends Comments {
 
     private int levels;
@@ -20,13 +22,13 @@ public class Comment extends Comments {
         setAuthor(comments.getAuthor());
         setMail(comments.getMail());
         setCoid(comments.getCoid());
-        setAuthor_id(comments.getAuthor_id());
+        setAuthorId(comments.getAuthorId());
         setUrl(comments.getUrl());
         setCreated(comments.getCreated());
         setAgent(comments.getAgent());
         setIp(comments.getIp());
         setContent(comments.getContent());
-        setOwner_id(comments.getOwner_id());
+        setOwnerId(comments.getOwnerId());
         setCid(comments.getCid());
     }
 

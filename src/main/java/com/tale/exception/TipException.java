@@ -1,5 +1,9 @@
 package com.tale.exception;
 
+/**
+ * @author biezhi
+ * @date 2018/6/5
+ */
 public class TipException extends RuntimeException {
 
     public TipException() {
@@ -7,14 +11,6 @@ public class TipException extends RuntimeException {
 
     public TipException(String message) {
         super(message);
-    }
-
-    public TipException(String message, Throwable cause) {
-        super(message, cause);
-    }
-
-    public TipException(Throwable cause) {
-        super(cause);
     }
 
 }

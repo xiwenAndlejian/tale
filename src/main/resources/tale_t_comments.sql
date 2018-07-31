@@ -1,0 +1,1 @@
+INSERT INTO tale.t_comments (coid, cid, created, author, author_id, owner_id, mail, url, ip, agent, content, type, status, parent) VALUES (1, 23, 1519441455, '落羽', 0, 3, 'luoyukami@qq.com', null, '127.0.0.1', null, 'nbnbnb', null, null, 0);
