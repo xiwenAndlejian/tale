@@ -147,6 +147,7 @@ public class SiteService {
         //Sqlite版本
         /*String sql = "select strftime('%Y年%m月', datetime(created, 'unixepoch') ) as date_str, count(*) as count  from t_contents " +
                 "where type = 'post' and status = 'publish' group by date_str order by date_str desc";*/
+        //MySQL
         String sql = "select date_format( sysdate(), '%Y年%m月') as date_str, count(*) as count  from t_contents " +
                 "where type = 'post' and status = 'publish' group by date_str order by date_str desc";
         List<Archive> archives = new Archive().queryAll(sql);
@@ -155,7 +156,7 @@ public class SiteService {
                     .map(this::parseArchive)
                     .collect(Collectors.toList());
         }
-        return Collections.EMPTY_LIST;
+        return Collections.emptyList();
     }
 
     private Archive parseArchive(Archive archive) {

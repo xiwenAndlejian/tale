@@ -309,7 +309,8 @@ public final class Theme {
     public static String article(String value) {
         if (StringKit.isNotBlank(value)) {
             value = value.replace("<!--more-->", "\r\n");
-            return TaleUtils.mdToHtml(value);
+            return value;
+//                    TaleUtils.mdToHtml(value);
         }
         return "";
     }

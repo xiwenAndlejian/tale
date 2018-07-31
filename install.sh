@@ -9,7 +9,7 @@ mvn clean package -Pprod -Dmaven.test.skip=true
 sed -i '' "s/app.devMode=false/app.devMode=true/g" src/main/resources/app.properties
 
 ## 发包
-scp -rp target/dist root@aliyun:/home/ganx/wars
+scp -rp target/dist root@shuda:/home/ganx/wars
 
 ## 本地开发环境不需要多次安装
 echo > src/main/resources/install.lock
